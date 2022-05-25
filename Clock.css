@@ -1,0 +1,104 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background:linear-gradient(to right, rgb(2, 30, 44),rgb(5, 24, 56));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+
+.Clock{
+    width: 300px;
+    height: 300px;
+    background-image: url(clock.png);
+    border-radius: 50%;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 -15px 15px rgba(255, 255, 255, .05),
+    inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+    0 15px 15px rgba(0, 0, 0, 0.05),
+    inset 0 15px 15px rgba(0, 0, 0, 0.05) ;
+
+}
+.Clock a{
+    text-decoration: none;
+    font-family: fira code;
+    font-style: italic;
+    color:  #76d7c4 ;
+    opacity: 0.6;
+    margin-top: 30%;
+
+}
+.Clock .number {
+    --rotation:0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    
+}
+.Clock .number1{--rotation:30deg;}
+.Clock .number2{--rotation:60deg;}
+.Clock .number3{--rotation:90deg;}
+.Clock .number4{--rotation:120deg;}
+.Clock .number5{--rotation:150deg;}
+.Clock .number6{--rotation:180deg;}
+.Clock .number7{--rotation:210deg;}
+.Clock .number8{--rotation:240deg;}
+.Clock .number9{--rotation:270deg;}
+.Clock .number10{--rotation:300deg;}
+.Clock .number11{--rotation:330deg;}
+
+.Clock .hand{
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    background-color: black;
+    transform-origin: bottom;
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
+    z-index: 10;
+}
+.Clock::after{
+    content: '';
+    position: absolute;
+    background-color:  #95a5a6
+    ;
+    z-index: 11;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.Clock .hand.sec{
+    width: 3px;
+    height: 40%;
+    background-color: white;
+    border: 1px solid #f0f3f4
+
+}
+.Clock .hand.min{
+    width: 6px;
+    height: 35%;
+    background-color:  #e74c3c;
+}
+.Clock .hand.hour{
+    width: 9px;
+    height: 30%;
+    background-color:    #a6acaf;
+    border: 1PX solid #a6acaf;
+
+}
